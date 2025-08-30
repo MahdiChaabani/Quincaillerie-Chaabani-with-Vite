@@ -505,10 +505,10 @@ header .links .loging-signup a:nth-of-type(2):hover{
     width: 400px;
      box-shadow: -2px 0 4px var(--shadow-color);
      /*-----*/
-     transform: translateX(100%);
+     /* transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     overflow-y: auto; 
-    justify-content: space-between; 
+    justify-content: space-between;  */
 
  }
 
