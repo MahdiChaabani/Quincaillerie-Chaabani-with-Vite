@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quincaillerie Chaabani  </title>
+     <link rel="icon" type="image/png" href="images/logo-icon1.png">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container top-nav">
+            <a href="#" class="logo">
+                <img class="logo-img" src="images/logo-dark.jpg" alt="Logo">
+            </a>
+            <form action="" class="search">
+                <input type="search" placeholder="Search for Product... " name="" id=""> 
+                <button type="submit">Search</button>
+            </form>
+
+                <div class="cart-header">
+                    <div class="icon-cart">
+                         <i id="user" class="fa-solid fa-user"></i>
+                     
+                         <i class="fa-solid fa-heart"></i>
+                         <span class="count-item-fav">0</span>
+
+                        <i class="fa-solid fa-basket-shopping"></i>
+                       
+                        <span class="count-item">0</span>
+                    </div>
+                    <div class="total-price">
+                        <p class="mycart">My cart: </p>
+                        <p class="price-cart-head">$0</p>
+                    </div>
+                </div>
+        </div>
+
+        <nav>
+            <div class="links container">
+                <ul >
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul> 
+
+            <div class="loging-signup">
+                <a href="#" class="login">Login <i class="fa-solid fa-right-to-bracket"></i> </a>
+                <a href="#" class="sign-up">Sign Up <i class="fa-solid fa-user-plus"></i></a>
+            </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <div class="cart">
+        <div class="top-cart">
+            <h3>My Cart <span>(0 Item in Cart)</span></h3>
+            <span class="close-cart">
+               <i class="fa-solid fa-xmark"></i>
+            </span>
+        </div>
+        <div class="item-in-cart">
+            <div class="item-cart">
+                <div class="img-cart">
+                    <img src="images/product-1.jpg" alt="">
+                </div>
+                <div class="content-cart">
+                    <h4>Product Name</h4>
+                    <p class="price-cart">$20.00</p>
+                    <div class="quantity">
+                        <span class="minus">-</span>
+                        <span class="num">1</span>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
+                <div class="remove-item">
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-cart">
+            <div class="total">
+                <p>Cart Subtotal</p>
+                <p class="price-cart-total">$0</p>
+
+            </div>
+
+            <div class="button-cart">
+                <a href="#" class="btn-cart">Proceed to checkout</a>
+                <button class="btn-cart trans-bg">Shop More</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
