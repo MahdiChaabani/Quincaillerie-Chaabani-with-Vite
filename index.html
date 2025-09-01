@@ -1,18 +1,31 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
+=======
+<html lang="fr">
+>>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quincaillerie Chaabani  </title>
+<<<<<<< HEAD
      <link rel="icon" type="image/png" href="images/logo-icon1.png">
     <link rel="stylesheet" href="CSS/style.css">
 
+=======
+     <link rel="icon" type="image/ico" href="public/images/logo-icon1.ico">
+    <link rel="stylesheet" href="src/style.css">
+    <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- ========== Font Awesome CDN ========== -->
+>>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container top-nav">
             <a href="#" class="logo">
+<<<<<<< HEAD
                 <img class="logo-img" src="images/logo-dark.jpg" alt="Logo">
             </a>
             <form action="" class="search">
@@ -21,12 +34,23 @@
             </form>
 
                 <div class="cart-header">
+=======
+                <img class="logo-img" src="public/images/logo-dark.jpg" alt="Logo">
+            </a>
+            <form action="" class="search">
+                <input type="search" placeholder="Rechercher un produit... " name="" id=""> 
+                <button type="submit">Rechercher</button>
+            </form>
+
+                <div class="cart-header" >
+>>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
                     <div class="icon-cart">
                          <i id="user" class="fa-solid fa-user"></i>
                      
                          <i class="fa-solid fa-heart"></i>
                          <span class="count-item-fav">0</span>
 
+<<<<<<< HEAD
                         <i class="fa-solid fa-basket-shopping"></i>
                        
                         <span class="count-item">0</span>
@@ -34,6 +58,15 @@
                     <div class="total-price">
                         <p class="mycart">My cart: </p>
                         <p class="price-cart-head">$0</p>
+=======
+                        <i class="fa-solid fa-basket-shopping"  onclick="openCart()"></i>
+                       
+                        <span class="count-item" onclick="openCart()">0</span>
+                    </div>
+                    <div class="total-price" onclick="openCart()">
+                        <p class="mycart" >Mon panier: </p>
+                        <p class="price-cart-head">0 DT</p>
+>>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
                     </div>
                 </div>
         </div>
@@ -41,6 +74,7 @@
         <nav>
             <div class="links container">
                 <ul >
+<<<<<<< HEAD
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">About</a></li>
@@ -50,6 +84,17 @@
             <div class="loging-signup">
                 <a href="#" class="login">Login <i class="fa-solid fa-right-to-bracket"></i> </a>
                 <a href="#" class="sign-up">Sign Up <i class="fa-solid fa-user-plus"></i></a>
+=======
+                <li class="active"><a href="#">Accueil</a></li>
+                <li><a href="#">Produits</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Contactez-nous </a></li>
+            </ul> 
+
+            <div class="loging-signup">
+                <a href="#" class="login">Connexion <i class="fa-solid fa-right-to-bracket"></i> </a>
+                <a href="#" class="sign-up">S'inscrire <i class="fa-solid fa-user-plus"></i></a>
+>>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
             </div>
             </div>
         </nav>
@@ -58,6 +103,7 @@
 
     <div class="cart">
         <div class="top-cart">
+<<<<<<< HEAD
             <h3>My Cart <span>(0 Item in Cart)</span></h3>
             <span class="close-cart">
                <i class="fa-solid fa-xmark"></i>
@@ -86,10 +132,25 @@
             <div class="total">
                 <p>Cart Subtotal</p>
                 <p class="price-cart-total">$0</p>
+=======
+            <h3>Mon Panier <br> <span>( 0 Article dans le Panier)</span></h3>
+            <span class="close-cart" onclick="closeCart()">
+               <i class="fa-solid fa-xmark" onclick="closeCart()" ></i>
+            </span>
+        </div>
+        <div class="items-in-cart">
+
+        </div>
+        <div class="bottom-cart">
+            <div class="total">
+                <p>Sous-total du Panier</p>
+                <p class="price-cart-total">0 DT</p>
+>>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
 
             </div>
 
             <div class="button-cart">
+<<<<<<< HEAD
                 <a href="#" class="btn-cart">Proceed to checkout</a>
                 <button class="btn-cart trans-bg">Shop More</button>
             </div>
@@ -97,5 +158,144 @@
     </div>
     
     <script src="script.js"></script>
+=======
+                <a href="#" class="btn-cart">Procéder au paiement</a>
+                <button class="btn-cart trans-bg">Acheter plus</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="slider">
+        <div class="container">
+            <div class="side-barre">
+                <h2><i class="fa-solid fa-bars"></i> Acheter par département </h2>
+                <a href="#">Produits</a>
+                <a href="#">Outils Électriques</a>
+                <a href="#">Outils Manuels</a>
+                <a href="#">Peinture & Décoration</a>
+                <a href="#">Quincaillerie Générale</a>
+                <a href="#">Électricité & Éclairage</a>
+                <a href="#">Plomberie</a>
+                <a href="#">Promotions</a>
+            </div>
+
+            <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-1.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-14.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-3.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-4.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-5.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-6.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-10.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-11.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-12.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-13.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-9.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-15.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-16.jpg" alt=""> </a></div>
+                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-17.jpg" alt=""> </a></div>
+                
+            </div>
+            <!-- ========== If we need pagination ========== -->
+            <div id="swiper-pagination" class="swiper-pagination"></div>
+          
+            <!-- ========== If we need navigation buttons ========== -->
+            <!-- <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div> -->
+
+          </div>
+        
+    </div>
+        
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature-item">
+                <i class="fa-solid fa-truck-fast fa-2x fa-beat"></i>
+                <div class="text">
+                    <h4>Livraison Rapide</h4>
+                    <p>Livraison gratuite sur toutes les commandes de plus de 300 DT</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-rotate fa-2x fa-beat"></i>
+                <div class="text">
+                    <h4>Retours Faciles</h4>
+                    <p>Politique de retour de 30 jours sur toutes les commandes</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-shield-halved fa-2x fa-beat"></i>
+                <div class="text">
+                    <h4>Paiement Sécurisé</h4>
+                    <p>Nous garantissons un paiement sécurisé avec PEV</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-headset fa-2x fa-beat"></i>
+                <div class="text">
+                    <h4>Support 24/7</h4>
+                    <p>Contactez-nous 24 heures sur 24, <br> 7 jours sur 7</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-tags fa-2x fa-beat"></i>
+               <div class="text">
+                    <h4>Meilleur Prix</h4>
+                    <p>Nous offrons des prix compétitifs sur tous les produits</p>
+               </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <section class="banner">
+        <div class="container">
+            <div class="banner-img">
+                <div class="glass-hover">
+                    <a href="#"> <img src="images/banners/banner -  (1).png" alt=""></a>
+                </div>
+            </div>
+            <div class="banner-img">
+                <div class="glass-hover">
+                    <a href="#"> <img class="banner-6" src="images/banners/banner - (6).png" alt=""></a>
+                </div>
+            </div>
+            <div class="banner-img">
+                <div class="glass-hover">
+                    <a href="#"> <img src="images/banners/banner -  (3).png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="slider slider-sale">
+        <div class="container">
+            <div class="sale-sec mySwiper">
+                <div class="top-slide">
+                    <h2>Produits en <span>promotion</span></h2>
+                </div>
+
+                <div id="swiper-item-sale" class="products swiper-wrapper">
+
+
+
+                </div>
+                <div class="swiper-button-next btn-Swip"></div>
+                <div class="swiper-button-prev btn-Swip"></div>
+                <div class="swiper-pagination"></div>   
+                
+
+        </div>
+            </div>
+        </div>
+    </section>
+     <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+   <script type="module" src="/src/main.js"></script>
+>>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
 </body>
 </html>
