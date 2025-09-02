@@ -1,4 +1,5 @@
 import { setAllProductsItems } from './cart.js';
+import { setAllProductsItemsForFavorites } from './favorites.js';
 
 export function fetchProducts() {
   fetch('public/Data/items.json')
@@ -17,8 +18,9 @@ export function fetchProducts() {
         return;
       }
       
-      // Set products data in cart module
+      // Set products data in both cart and favorites modules
       setAllProductsItems(data);
+      setAllProductsItemsForFavorites(data);
       
       // Clear existing content
       swiper_item_sale.innerHTML = '';
@@ -39,7 +41,7 @@ export function fetchProducts() {
           <!-- product ${product.id} -->
           <div class="product swiper-slide">
             <div class="icons">
-              <span><i id="heart" class="fa-solid fa-heart"></i></span>
+              <span><i id="heart" class="fa-solid fa-heart" onclick="toggleFavorite(${product.id}, this)" data-product-id="${product.id}"></i></span>
               <span><i onclick="addProductToCart(${product.id}, this)" class="fa-duotone fa-solid fa-cart-plus" data-product-id="${product.id}"></i></span>
               <span><i class="fa-solid fa-share-from-square"></i></span>
               <span><i class="fa-solid fa-magnifying-glass"></i></span>

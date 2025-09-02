@@ -1,40 +1,20 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en">
-=======
 <html lang="fr">
->>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quincaillerie Chaabani  </title>
-<<<<<<< HEAD
-     <link rel="icon" type="image/png" href="images/logo-icon1.png">
-    <link rel="stylesheet" href="CSS/style.css">
-
-=======
      <link rel="icon" type="image/ico" href="public/images/logo-icon1.ico">
     <link rel="stylesheet" href="src/style.css">
     <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- ========== Font Awesome CDN ========== -->
->>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container top-nav">
             <a href="#" class="logo">
-<<<<<<< HEAD
-                <img class="logo-img" src="images/logo-dark.jpg" alt="Logo">
-            </a>
-            <form action="" class="search">
-                <input type="search" placeholder="Search for Product... " name="" id=""> 
-                <button type="submit">Search</button>
-            </form>
-
-                <div class="cart-header">
-=======
                 <img class="logo-img" src="public/images/logo-dark.jpg" alt="Logo">
             </a>
             <form action="" class="search">
@@ -43,22 +23,12 @@
             </form>
 
                 <div class="cart-header" >
->>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
                     <div class="icon-cart">
                          <i id="user" class="fa-solid fa-user"></i>
                      
-                         <i class="fa-solid fa-heart"></i>
+                         <i class="fa-solid fa-heart" onclick="showFavorites()"></i>
                          <span class="count-item-fav">0</span>
 
-<<<<<<< HEAD
-                        <i class="fa-solid fa-basket-shopping"></i>
-                       
-                        <span class="count-item">0</span>
-                    </div>
-                    <div class="total-price">
-                        <p class="mycart">My cart: </p>
-                        <p class="price-cart-head">$0</p>
-=======
                         <i class="fa-solid fa-basket-shopping"  onclick="openCart()"></i>
                        
                         <span class="count-item" onclick="openCart()">0</span>
@@ -66,7 +36,6 @@
                     <div class="total-price" onclick="openCart()">
                         <p class="mycart" >Mon panier: </p>
                         <p class="price-cart-head">0 DT</p>
->>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
                     </div>
                 </div>
         </div>
@@ -74,17 +43,6 @@
         <nav>
             <div class="links container">
                 <ul >
-<<<<<<< HEAD
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul> 
-
-            <div class="loging-signup">
-                <a href="#" class="login">Login <i class="fa-solid fa-right-to-bracket"></i> </a>
-                <a href="#" class="sign-up">Sign Up <i class="fa-solid fa-user-plus"></i></a>
-=======
                 <li class="active"><a href="#">Accueil</a></li>
                 <li><a href="#">Produits</a></li>
                 <li><a href="#">À propos</a></li>
@@ -94,7 +52,6 @@
             <div class="loging-signup">
                 <a href="#" class="login">Connexion <i class="fa-solid fa-right-to-bracket"></i> </a>
                 <a href="#" class="sign-up">S'inscrire <i class="fa-solid fa-user-plus"></i></a>
->>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
             </div>
             </div>
         </nav>
@@ -103,36 +60,6 @@
 
     <div class="cart">
         <div class="top-cart">
-<<<<<<< HEAD
-            <h3>My Cart <span>(0 Item in Cart)</span></h3>
-            <span class="close-cart">
-               <i class="fa-solid fa-xmark"></i>
-            </span>
-        </div>
-        <div class="item-in-cart">
-            <div class="item-cart">
-                <div class="img-cart">
-                    <img src="images/product-1.jpg" alt="">
-                </div>
-                <div class="content-cart">
-                    <h4>Product Name</h4>
-                    <p class="price-cart">$20.00</p>
-                    <div class="quantity">
-                        <span class="minus">-</span>
-                        <span class="num">1</span>
-                        <span class="plus">+</span>
-                    </div>
-                </div>
-                <div class="remove-item">
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-            </div>
-        </div>
-        <div class="bottom-cart">
-            <div class="total">
-                <p>Cart Subtotal</p>
-                <p class="price-cart-total">$0</p>
-=======
             <h3>Mon Panier <br> <span>( 0 Article dans le Panier)</span></h3>
             <span class="close-cart" onclick="closeCart()">
                <i class="fa-solid fa-xmark" onclick="closeCart()" ></i>
@@ -145,20 +72,10 @@
             <div class="total">
                 <p>Sous-total du Panier</p>
                 <p class="price-cart-total">0 DT</p>
->>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
 
             </div>
 
             <div class="button-cart">
-<<<<<<< HEAD
-                <a href="#" class="btn-cart">Proceed to checkout</a>
-                <button class="btn-cart trans-bg">Shop More</button>
-            </div>
-        </div>
-    </div>
-    
-    <script src="script.js"></script>
-=======
                 <a href="#" class="btn-cart">Procéder au paiement</a>
                 <button class="btn-cart trans-bg">Acheter plus</button>
             </div>
@@ -296,6 +213,5 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
    <script type="module" src="/src/main.js"></script>
->>>>>>> 56dc1a0 (added some feature js and change all project with vitejs)
 </body>
 </html>
