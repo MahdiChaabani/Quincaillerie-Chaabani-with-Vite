@@ -42,9 +42,8 @@ export function fetchProducts() {
           <div class="product swiper-slide">
             <div class="icons">
               <span><i id="heart" class="fa-solid fa-heart" onclick="toggleFavorite(${product.id}, this)" data-product-id="${product.id}"></i></span>
-              <span><i onclick="addProductToCart(${product.id}, this)" class="fa-duotone fa-solid fa-cart-plus" data-product-id="${product.id}"></i></span>
-              <span><i class="fa-solid fa-share-from-square"></i></span>
-              <span><i class="fa-solid fa-magnifying-glass"></i></span>
+              <span><i id="shop" onclick="addProductToCart(${product.id}, this)" class="fa-duotone fa-solid fa-cart-plus" data-product-id="${product.id}"></i></span>
+              <span><i id="share" class="fa-solid fa-share-from-square"></i></span>
             </div>
             
             <span class="sale-present">${discount}%</span>
