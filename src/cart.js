@@ -1,5 +1,7 @@
 import { showNotification } from './notifications.js';
 
+
+
 // Global variables for cart
 let products_in_cart = [];
 let all_products_items = [];
@@ -14,11 +16,49 @@ export function setAllProductsItems(products) {
 // Cart open/close functions
 export function openCart() {
   cart.classList.add('open');
+   createCartOverlay()
 }
 
 export function closeCart() {
   cart.classList.remove('open');
+   removeCartOverlay();
 }
+
+
+// Create overlay background
+function createCartOverlay() {
+  // Check if overlay already exists
+  let overlay = document.getElementById('cart-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'cart-overlay';
+    overlay.className = 'cart-overlay';
+    document.body.appendChild(overlay);
+    
+    // Add click event to close cart when clicking outside
+    overlay.addEventListener('click', closeCart);
+  }
+  
+  // Show overlay
+  setTimeout(() => {
+    overlay.classList.add('active');
+  }, 10);
+}
+
+// Remove overlay background
+ function removeCartOverlay() {
+  const overlay = document.getElementById('cart-overlay');
+  if (overlay) {
+    overlay.classList.remove('active');
+    // Remove overlay after animation completes
+    setTimeout(() => {
+      if (overlay.parentNode) {
+        overlay.parentNode.removeChild(overlay);
+      }
+    }, 300);
+  }
+}
+
 // Add product to cart function
 export function addProductToCart(id, btn) {
   console.log('Adding product to cart:', id, all_products_items); // Debug log
@@ -44,7 +84,7 @@ export function addProductToCart(id, btn) {
   
   if (!productToAdd) {
     console.error('Product not found:', productId);
-    showNotification('Error: Product not found', 'warning');
+    showNotification('Erreur: Product not found', 'warning');
     return;
   }
 
@@ -59,13 +99,20 @@ export function addProductToCart(id, btn) {
   }
 
   console.log('Product added to cart:', products_in_cart);
-  showNotification('Product added to cart successfully!', 'info');
+  showNotification('Produit ajouté au panier avec succès!', 'info');
   getcartitems();
 }
 
 
-// Generate cart items HTML
+let count_items = document.querySelector('.count-item');
+let price_cart_head = document.querySelector('.price-cart-head');
+let count_items_in_cart = document.querySelector('.count-item-cart');
+let total_price_in_cart = document.querySelector('.price-cart-total');
+
+
 function getcartitems() {
+  let total_price = 0;
+
   let item_in_cart = "";
   for (let i = 0; i < products_in_cart.length; i++) {
     item_in_cart += `
@@ -87,11 +134,17 @@ function getcartitems() {
         </button>
       </div>
     `;
+
+    total_price += products_in_cart[i].price * products_in_cart[i].quantity;
   }
   items_in_cart.innerHTML = item_in_cart;
-  initQuantityListeners();
+  price_cart_head.innerHTML= total_price + " TND";
+  total_price_in_cart.innerHTML = total_price + " TND";
+  count_items.innerHTML = products_in_cart.length;
+  count_items_in_cart.innerHTML = products_in_cart.length;
   initRemoveListeners();
 }
+
 
 // Remove product from cart
 export function removeProductFromCart(index) {
@@ -105,11 +158,11 @@ export function removeProductFromCart(index) {
     const productButtons = document.querySelectorAll(`[onclick*="addProductToCart(${removedProduct.id}"]`);
     productButtons.forEach(btn => btn.classList.remove('active'));
     
-    showNotification('Product removed from cart', 'info');
+    showNotification('Produit retiré du panier', 'info');
     getcartitems();
     
     if (products_in_cart.length === 0) {
-      items_in_cart.innerHTML = "<p style='text-align: center; color: var(--dark-color);font-family: cursive; font-weight: 500; font-size: 1rem'>Your cart is empty</p>";
+      items_in_cart.innerHTML = "<p style='text-align: center; color: var(--dark-color);font-family: cursive; font-weight: 500; font-size: 1rem'>Votre panier est vide</p>";
     }
   }
 }
@@ -198,3 +251,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 });
+
+
+//continuer mes achat 
+document.addEventListener('DOMContentLoaded', () => {
+const continuer = document.querySelector('.btn-cart');
+
+
+if (continuer) {
+    continuer.addEventListener('click', closeCart);
+      updateProductsCount();
+  }
+  }
+  );
+
+
+// remove all products from cart
+document.addEventListener('DOMContentLoaded', () => {
+  const removeAllBtn = document.querySelector('.btn-cart-sup.sup-tous');
+  if (removeAllBtn) {
+    removeAllBtn.addEventListener('click', removeAllProductsFromCart);
+  }
+  
+});
+
+function removeAllProductsFromCart() {
+  if (products_in_cart.length === 0) {
+    showNotification('Votre panier est vide a ce moment!', 'info');
+    return;
+  }
+  products_in_cart = [];
+  getcartitems();
+  showNotification('Tous les produits ont été retirés du panier', 'info');
+  items_in_cart.innerHTML = "<p style='text-align: center; color: var(--dark-color);font-family: cursive; font-weight: 500; font-size: 1rem'>Votre panier est vide</p>";
+      closeCart();
+  updateProductsCount();
+  
+}
+
+

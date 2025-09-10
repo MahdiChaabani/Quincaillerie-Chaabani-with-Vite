@@ -12,10 +12,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body>
+  
     <header>
+        <div class="top-bar">
+    <div class="info">
+      <span class="welcome">Bienvenue dans notre boutique Chaabani Quincaillerie</span>
+      <span class="contact"><i class="fas fa-phone"></i> +216 29 444 388</span>
+      <span class="contact"><i class="fas fa-envelope"></i> contact@chaabaniQuncaillerie.tn</span>
+    </div>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
         <div class="container top-nav">
             <a href="#" class="logo">
-                <img class="logo-img" src="public/images/logo-dark.jpg" alt="Logo">
+                <img class="logo-img" src="images/logo-dark.jpg" alt="Logo">
             </a>
             <form action="" class="search">
                 <input type="search" placeholder="Rechercher un produit... " name="" id=""> 
@@ -24,14 +37,14 @@
 
                 <div class="cart-header" >
                     <div class="icon-cart">
-                         <i id="user" class="fa-solid fa-user"></i>
+                         <i id="user" class="fa-solid fa-user" onclick="openUserDropdown()"></i>
                      
-                         <i class="fa-solid fa-heart" onclick="showFavorites()"></i>
+                         <i  class="fa-solid fa-heart "  onclick="showFavorites()"></i>
                          <span class="count-item-fav">0</span>
 
-                        <i class="fa-solid fa-basket-shopping"  onclick="openCart()"></i>
+                        <i id="shop-cart" class="fa-solid fa-basket-shopping"  onclick="openCart()"></i>
                        
-                        <span class="count-item" onclick="openCart()">0</span>
+                        <span class="count-item" >0</span>
                     </div>
                     <div class="total-price" onclick="openCart()">
                         <p class="mycart" >Mon panier: </p>
@@ -56,11 +69,24 @@
             </div>
         </nav>
     </header>
-    
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content animate-on-scroll">
+            <h1>Bienvenue chez Quincaillerie Chaabani</h1>
+            <p>professionnelle et de haute qualité pour tous vos besoins de quincaillerie </p>
+            <div class="hero-buttons">
+                <a href="#productst" class="btn btn-primary">Shop Now</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    
     <div class="cart">
         <div class="top-cart">
-            <h3>Mon Panier <br> <span>( 0 Article dans le Panier)</span></h3>
+            <h3>Mon Panier <br> (<span class="count-item-cart" >0</span> Articles dans votre panier)</h3>
             <span class="close-cart" onclick="closeCart()">
                <i class="fa-solid fa-xmark" onclick="closeCart()" ></i>
             </span>
@@ -70,15 +96,17 @@
         </div>
         <div class="bottom-cart">
             <div class="total">
-                <p>Sous-total du Panier</p>
-                <p class="price-cart-total">0 DT</p>
+                <p>Total </p>
+                <p class="price-cart-total">0</p>
 
             </div>
 
             <div class="button-cart">
                 <a href="#" class="btn-cart">Procéder au paiement</a>
-                <button class="btn-cart trans-bg">Acheter plus</button>
+                <button class="btn-cart trans-bg">Continuer mes achats</button>
+                <button class="btn-cart-sup sup-tous">Supprimer tous </button>
             </div>
+             
         </div>
     </div>
 
@@ -188,11 +216,11 @@
         </div>
     </section> -->
 
-    <section class="slider slider-sale">
+    <section id="productst" class="slider slider-sale">
         <div class="container">
             <div class="sale-sec mySwiper">
                 <div class="top-slide">
-                    <h2>Produits en <span>promotion</span></h2>
+                    <h2 >Produits en <span>promotion</span></h2>
                 </div>
 
                 <div id="swiper-item-sale" class="products swiper-wrapper">
@@ -213,5 +241,48 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
    <script type="module" src="/src/main.js"></script>
+
+   <script> 
+   function scrollToSection(sectionId) {
+            const section = document.getElementById(productst);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        function customSmoothScroll(targetId, duration = 1000) {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            
+            const targetPosition = target.offsetTop;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            let startTime = null;
+            
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = ease(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+            
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+            
+            requestAnimationFrame(animation);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        });
+
+   </script>
 </body>
 </html>

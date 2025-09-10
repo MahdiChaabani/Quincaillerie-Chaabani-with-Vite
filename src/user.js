@@ -21,12 +21,9 @@ function createUserDropdown() {
             <ul class="user-menu">
                 <li><a href="#" onclick="handleLogin()"><i class="fa-solid fa-sign-in-alt"></i> Se connecter</a></li>
                 <li><a href="#" onclick="handleSignUp()"><i class="fa-solid fa-user-plus"></i> S'inscrire</a></li>
-                <li class="divider"></li>
                 <li><a href="#" onclick="showProfile()"><i class="fa-solid fa-user"></i> Mon profil</a></li>
                 <li><a href="#" onclick="showOrders()"><i class="fa-solid fa-box"></i> Mes commandes</a></li>
-                <li><a href="#" onclick="showSettings()"><i class="fa-solid fa-cog"></i> Paramètres</a></li>
                 <li class="divider"></li>
-                <li><a href="#" onclick="showHelp()"><i class="fa-solid fa-question-circle"></i> Aide</a></li>
                 <li><a href="#" onclick="handleLogout()"><i class="fa-solid fa-sign-out-alt"></i> Déconnexion</a></li>
             </ul>
         </div>

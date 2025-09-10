@@ -15,7 +15,7 @@ export function toggleFavorite(id, heartIcon) {
   
   if (!all_products_items || all_products_items.length === 0) {
     console.error('Products data not available');
-    showNotification('Error: Products data not loaded', 'warning');
+    showNotification('Données des produits non chargées', 'warning');
     return;
   }
 
@@ -30,21 +30,21 @@ export function toggleFavorite(id, heartIcon) {
     products_in_favorites.splice(existingIndex, 1);
     heartIcon.classList.remove('active');
     heartIcon.style.color = '';
-    showNotification('Product removed from favorites ❤️', 'info');
+    showNotification('Produit retiré des favoris ❤️', 'info');
   } else {
     // Add to favorites
     const productToAdd = all_products_items.find(p => p.id === productId);
     
     if (!productToAdd) {
       console.error('Product not found:', productId);
-      showNotification('Error: Product not found', 'warning');
+      showNotification('Error: Produit introuvable', 'warning');
       return;
     }
 
     products_in_favorites.push(productToAdd);
     heartIcon.classList.add('active');
     heartIcon.style.color = '#e74c3c';
-    showNotification('Product added to favorites! ❤️', 'info');
+    showNotification('Produit ajouté aux favoris ! ❤️', 'info');
   }
 
   updateFavoriteCount();
@@ -83,7 +83,7 @@ export function showFavorites() {
       </div>
       <div class="favorites-footer">
         <button class="btn-favorites">
-          Continuer les achats
+          Continuer mesC achats
         </button>
       </div>
     </div>
@@ -171,7 +171,7 @@ export function removeFromFavorites(index) {
     });
     
     updateFavoriteCount();
-    showNotification('Product removed from favorites', 'info');
+    showNotification('Produit retiré des favoris', 'info');
     
     // Refresh favorites modal if open
     const favoritesModal = document.querySelector('.favorites-modal');

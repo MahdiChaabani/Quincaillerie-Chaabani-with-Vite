@@ -1,7 +1,7 @@
 // Custom notification function
 export function showNotification(message, type = 'info') {
   // Play notification sound
-  playNotificationSound(type);
+  // playNotificationSound(type);
   
   // Remove existing notification
   const existingNotification = document.querySelector('.custom-notification');
@@ -33,43 +33,43 @@ export function showNotification(message, type = 'info') {
   }, 4000);
 }
 
-// Play notification sound
-function playNotificationSound(type) {
-  try {
-    // Create audio context for better browser support
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+// // Play notification sound
+// function playNotificationSound(type) {
+//   try {
+//     // Create audio context for better browser support
+//     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     
-    if (type === 'warning') {
-      // Warning sound - two short beeps
-      playBeep(audioContext, 800, 0.1, 0.1);
-      setTimeout(() => playBeep(audioContext, 600, 0.1, 0.1), 150);
-    } else {
-      // Success/info sound - single pleasant beep
-      playBeep(audioContext, 1000, 0.2, 0.1);
-    }
-  } catch (error) {
-    console.log('Audio not supported');
-  }
-}
+//     if (type === 'warning') {
+//       // Warning sound - two short beeps
+//       playBeep(audioContext, 800, 0.1, 0.1);
+//       setTimeout(() => playBeep(audioContext, 600, 0.1, 0.1), 150);
+//     } else {
+//       // Success/info sound - single pleasant beep
+//       playBeep(audioContext, 1000, 0.2, 0.1);
+//     }
+//   } catch (error) {
+//     console.log('Audio not supported');
+//   }
+// }
 
-// Generate beep sound
-function playBeep(audioContext, frequency, duration, volume) {
-  const oscillator = audioContext.createOscillator();
-  const gainNode = audioContext.createGain();
+// // Generate beep sound
+// function playBeep(audioContext, frequency, duration, volume) {
+//   const oscillator = audioContext.createOscillator();
+//   const gainNode = audioContext.createGain();
   
-  oscillator.connect(gainNode);
-  gainNode.connect(audioContext.destination);
+//   oscillator.connect(gainNode);
+//   gainNode.connect(audioContext.destination);
   
-  oscillator.frequency.value = frequency;
-  oscillator.type = 'sine';
+//   oscillator.frequency.value = frequency;
+//   oscillator.type = 'sine';
   
-  gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-  gainNode.gain.linearRampToValueAtTime(volume, audioContext.currentTime + 0.01);
-  gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + duration);
+//   gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+//   gainNode.gain.linearRampToValueAtTime(volume, audioContext.currentTime + 0.01);
+//   gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + duration);
   
-  oscillator.start(audioContext.currentTime);
-  oscillator.stop(audioContext.currentTime + duration);
-}
+//   oscillator.start(audioContext.currentTime);
+//   oscillator.stop(audioContext.currentTime + duration);
+// }
 
 // Add notification styles to head (run immediately when module loads)
 if (!document.querySelector('#notification-styles')) {
