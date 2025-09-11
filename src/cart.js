@@ -284,7 +284,7 @@ function removeAllProductsFromCart() {
   getcartitems();
   showNotification('Tous les produits ont été retirés du panier', 'info');
   items_in_cart.innerHTML = "<p style='text-align: center; color: var(--dark-color);font-family: cursive; font-weight: 500; font-size: 1rem'>Votre panier est vide</p>";
-      closeCart();
+      // closeCart();
   updateProductsCount();
   
 }
