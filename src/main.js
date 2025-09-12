@@ -5,6 +5,7 @@ import { fetchProducts } from './fetch-products.js';
 import { openCart, closeCart, removeProductFromCart, addProductToCart } from './cart.js';
 import { toggleFavorite, showFavorites, removeFromFavorites, addProductToCartFromFavorites } from './favorites.js';
 import { initUserFunctionality } from './user.js';
+import './categories.js'; 
 
 // Make functions globally available for onclick in HTML
 window.openCart = openCart;
