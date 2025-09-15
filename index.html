@@ -30,7 +30,8 @@
         <!-- Top Nav -->
         <div class="container top-nav">
             <a href="#" class="logo">
-                <img class="logo-img" src="images/logo-dark.jpg" alt="Logo">
+                <img class="logo-img logo-light" src="images/logo-dark.jpg" alt="Light Logo">
+                <!-- <img class="logo-img logo-dark" src="images/logo-white-trans.jpg" alt="Dark Logo"> -->
             </a>
             <form action="" class="search">
                 <input type="search" placeholder="Rechercher un produit... " name="" id=""> 
@@ -39,6 +40,13 @@
 
                 <div class="cart-header" >
                     <div class="icon-cart">
+
+                        <!-- Dark/Light Mode Toggle -->
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <div class="glow-effect"></div>
+                        <i class="theme-icon sun fas fa-sun"></i>
+                        <i class="theme-icon moon fas fa-moon"></i>
+                    </div>
                          <i id="user" class="fa-solid fa-user" onclick="openUserDropdown()"></i>
                      
                          <i  class="fa-solid fa-heart "  onclick="showFavorites()"></i>
@@ -321,6 +329,49 @@
         document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.style.scrollBehavior = 'smooth';
         });
+
+
+         // Theme Toggle Functionality
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // Add click animation
+            const toggleBtn = document.querySelector('.theme-toggle');
+            toggleBtn.style.transform = 'scale(0.95) translateY(-2px)';
+            
+            setTimeout(() => {
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                toggleBtn.style.transform = 'translateY(-2px)';
+                
+                // Add a subtle pulse effect
+                toggleBtn.style.animation = 'pulse 0.6s ease-out';
+                setTimeout(() => {
+                    toggleBtn.style.animation = '';
+                }, 600);
+            }, 100);
+        }
+
+        // Load saved theme on page load
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', loadTheme);
+
+        // Add pulse animation keyframes dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: translateY(-2px) scale(1); }
+                50% { transform: translateY(-2px) scale(1.1); }
+                100% { transform: translateY(-2px) scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
 
    </script>
 </body>
