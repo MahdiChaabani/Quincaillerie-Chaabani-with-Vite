@@ -31,22 +31,36 @@ export function fetchProducts() {
         // Determine if product is new and set display style
         let newProductDisplay = 'none';
         let newProductText = '';
+        let disp="";
+        let dispo_style="";
         
         if (product.new == 1) {
           newProductDisplay = 'inline-block';
           newProductText = 'New';
         }
+        if (product.disponability == -1) {
+            disp="Rupture de stock";
+            dispo_style="rupture";
+        }
+        else if (product.disponability == 1) {
+            disp="Disponible";
+            dispo_style="disponible";
+        }
+        else {
+            disp="Stock limité";
+            dispo_style="stock-limit";
+        }
 
         swiper_item_sale.innerHTML += `
-          <!-- product ${product.id} -->
+        <!-- product ${product.id} -->
           <div class="product swiper-slide">
             <div class="icons">
               <span><i id="heart" class="fa-solid fa-heart" onclick="toggleFavorite(${product.id}, this)" data-product-id="${product.id}"></i></span>
-              <span><i id="shop" onclick="addProductToCart(${product.id}, this)" class="fa-duotone fa-solid fa-cart-plus" data-product-id="${product.id}"></i></span>
-              <span><i id="share" class="fa-solid fa-share-from-square"></i></span>
+              <span><i onclick="addProductToCart(${product.id}, this)" class="fa-duotone fa-solid fa-cart-plus" data-product-id="${product.id}"></i></span>
+              <span><i class="fa-solid fa-share-from-square"></i></span>
             </div>
             
-            <span class="sale-present">${discount}%</span>
+            <span class="sale-discount">${discount}%</span>
             <span class="sale-new" style="display: ${newProductDisplay};">${newProductText}</span>
 
             <div class="img-product">
@@ -55,17 +69,13 @@ export function fetchProducts() {
             <div class="product-name">
               <h4 class="name-product"><a href="#">${product.name}</a></h4>
             </div>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
+           
             <div class="price">
               <p><span>${product.price} TND</span></p>
               <p class="old-price">${product.old_price} TND</p>
+              
             </div>
+            <span class="product-status ${dispo_style}">${disp}</span>
           </div>
         `;
       });

@@ -14,6 +14,7 @@
 <body>
   
     <header>
+        <!-- Top Bar -->
         <div class="top-bar">
     <div class="info">
       <span class="welcome">Bienvenue dans notre boutique Chaabani Quincaillerie</span>
@@ -26,6 +27,7 @@
       <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
     </div>
   </div>
+        <!-- Top Nav -->
         <div class="container top-nav">
             <a href="#" class="logo">
                 <img class="logo-img" src="images/logo-dark.jpg" alt="Logo">
@@ -53,6 +55,7 @@
                 </div>
         </div>
 
+        <!-- Navigation -->
         <nav>
             <div class="links container">
                 <ul >
@@ -62,10 +65,11 @@
                 <li><a href="#">Contactez-nous </a></li>
             </ul> 
 
-            <div class="loging-signup">
-                <a href="#" class="login">Connexion <i class="fa-solid fa-right-to-bracket"></i> </a>
-                <a href="#" class="sign-up">S'inscrire <i class="fa-solid fa-user-plus"></i></a>
-            </div>
+                <!-- <div class="loging-signup">
+                    <a href="#" class="login">Connexion <i class="fa-solid fa-right-to-bracket"></i> </a>
+                    <a href="#" class="sign-up">S'inscrire <i class="fa-solid fa-user-plus"></i></a>
+                </div> -->
+
             </div>
         </nav>
     </header>
@@ -77,13 +81,13 @@
             <h1>Bienvenue chez Quincaillerie Chaabani</h1>
             <p>professionnelle et de haute qualité pour tous vos besoins de quincaillerie </p>
             <div class="hero-buttons">
-                <a href="#productst" class="btn btn-primary" >Acheter plus</a>
+                <a href="#products" class="btn btn-primary" >Acheter plus</a>
                 <a href="#services" class="btn btn-secondary">Notre Services</a>
             </div>
         </div>
     </section>
 
-    
+    <!-- cart -->
     <div class="cart">
         <div class="top-cart">
             <h3>Mon Panier <br> (<span class="count-item-cart" >0</span> Articles dans votre panier)</h3>
@@ -110,51 +114,37 @@
         </div>
     </div>
 
-    <section class="slider">
+
+     <!-- slider department-->
+     <section class="slider">
         <div class="container">
             <div class="side-barre">
-                <h2><i class="fa-solid fa-bars"></i> Acheter par département </h2>
-                <a href="#">Produits</a>
-                <a href="#">Outils Électriques</a>
-                <a href="#">Outils Manuels</a>
-                <a href="#">Peinture & Décoration</a>
-                <a href="#">Quincaillerie Générale</a>
-                <a href="#">Électricité & Éclairage</a>
-                <a href="#">Plomberie</a>
-                <a href="#">Promotions</a>
-            </div>
-
-            <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-1.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-14.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-3.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-4.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-5.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-6.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-10.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-11.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-12.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-13.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-9.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-15.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-16.jpg" alt=""> </a></div>
-                <div class="swiper-slide"> <a href="#"> <img src="public/images/slider/slide-17.jpg" alt=""> </a></div>
+                <h2> <i class="fa-solid fa-bars"></i>Acheter par Categorie </h2>
                 
+                <a href="#"><i class="fa-solid fa-toolbox"></i>Quincaillerie Générale </a>
+                <a href="#"><i class="fa-solid fa-trowel"></i>Materiaux de construction</a>                
+                <a href="#"><i class="fa-solid fa-paint-roller"></i>Peinture & Décoration </a>                
+                <a href="#"><i class="fa-solid fa-bolt"></i>Électricité & Éclairage  </a>                
+                <a href="#"><i class="fa-solid fa-droplet"></i>Plomberie </a>                
+                <a href="#"><i class="fa-solid fa-fire"></i>Chauffage </a>                
+                <a href="#"><i class="fa-solid fa-shower"></i>Sanitaire</a>                
+                <a href="#"><i class="fa-solid fa-hammer"></i>Outillages </a>
+                <a href="#"><i class="fa-solid fa-faucet"></i>Robinetterie</a>
             </div>
-            <!-- ========== If we need pagination ========== -->
-            <div id="swiper-pagination" class="swiper-pagination"></div>
-          
-            <!-- ========== If we need navigation buttons ========== -->
-            <!-- <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div> -->
+            <!-- Swiper -->
+            <div class="swiperb mySwiperb">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#"><img src="public/images/banner1.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="public/images/banner2.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="public/images/banner3.jpg" alt=""></a></div>
+                </div>
+            </div>
 
-          </div>
-        
-    </div>
-        
+        </div>
     </section>
 
+
+     <!-- features -->
     <section class="features">
         <div class="container">
             <div class="feature-item">
@@ -195,7 +185,6 @@
         </div>
 
     </section>
-
     
     <!-- Categories -->
 
@@ -238,78 +227,61 @@
         </div>
     </section>
 
-
-    <!-- <section class="banner">
-        <div class="container">
-            <div class="banner-img">
-                <div class="glass-hover">
-                    <a href="#"> <img src="images/banners/banner -  (1).png" alt=""></a>
-                </div>
-            </div>
-            <div class="banner-img">
-                <div class="glass-hover">
-                    <a href="#"> <img class="banner-6" src="images/banners/banner - (6).png" alt=""></a>
-                </div>
-            </div>
-            <div class="banner-img">
-                <div class="glass-hover">
-                    <a href="#"> <img src="images/banners/banner -  (3).png" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section id="productst" class="slider slider-sale">
+ <!-- Products -->
+    <section class="slider slider-sale" id="products">
         <div class="container">
             <div class="sale-sec mySwiper">
                 <div class="top-slide">
-                    <h2 >Produits en <span>promotion</span></h2>
+                    <h2>Produits en <span>promotion</span></h2>
+                    <div class="header-controls">
+                        <div class="category-tabs">
+                            <div class="category-tab">
+                                <i class="fas fa-wrench"></i>
+                                Robinetterie
+                            </div>
+                            <div class="category-tab active">
+                                <i class="fas fa-tint"></i>
+                                Sanitaire
+                            </div>
+                            <div class="category-tab">
+                                <i class="fas fa-fire"></i>
+                                Chauffage
+                            </div>
+                            <div class="category-tab">
+                                <i class="fas fa-tools"></i>
+                                Outils
+                            </div>
+                        </div>
+                        <a href="#" class="voir-plus-btn">
+                        <span>Voir Plus</span>
+                        <span>→</span>
+                    </a>
+                        
+                    </div>
                 </div>
 
                 <div id="swiper-item-sale" class="products swiper-wrapper">
 
-
-
+                            <!-- Produits -->
+                       
                 </div>
                 <div class="swiper-button-next btn-Swip"></div>
-                <div class="swiper-button-prev btn-Swip"></div>
-                <div class="swiper-pagination"></div>   
-                
+                <div class="swiper-button-prev btn-Swip"></div> 
 
-        </div>
+            </div>
             </div>
         </div>
+        
     </section>
 
-
-
-        <section id="productst" class="slider slider-sale">
-        <div class="container">
-            <div class="sale-sec mySwiper">
-                <div class="top-slide">
-                    <h2 >Produits en <span>promotion</span></h2>
-                </div>
-
-                <div id="swiper-item-sale" class="products swiper-wrapper">
-
-
-
-                </div>
-                <div class="swiper-button-next btn-Swip"></div>
-                <div class="swiper-button-prev btn-Swip"></div>
-                <div class="swiper-pagination"></div>   
-                
-
-        </div>
-            </div>
-        </div>
-    </section>
+     
      <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
    <script type="module" src="/src/main.js"></script>
 
    <script> 
+//    smooth scrolling
    function scrollToSection(sectionId) {
             const section = document.getElementById(productst);
             if (section) {
