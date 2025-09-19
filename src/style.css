@@ -1230,7 +1230,7 @@ header nav ul {
 
         header nav ul li:hover,
         header nav ul li.active {
-            background: var(--main-color);
+             background: linear-gradient(135deg, var(--main-color), #74a0b7);
             transition: all 0.3s ease-in;
         }
 
@@ -1768,10 +1768,9 @@ header .top-nav .cart-header .fa-heart:hover {
 /* *Start swiper banner Section*/
 
 .swiperb {
-    margin-left: 70px;
-  flex: 1;
-  width: 90%;
-  height: auto;  
+    margin-left: 90px;
+  width: 80%;
+  height: 100%;  
   margin-top: 50px;
   overflow: hidden;
   margin-bottom: 30px;
@@ -2116,11 +2115,24 @@ header .top-nav .cart-header .fa-heart:hover {
         height: 270px;
         flex-shrink: 0; 
         margin-bottom: 10px;
-
+        
         }
-        .mySwiper{
+        .mySwiper_visserie{
             overflow: hidden;
         }
+        .mySwiper_outillages{
+            overflow: hidden;
+        }
+        .mySwiper_electricité{
+            overflow: hidden;
+        }
+        .mySwiper_plomberie{
+            overflow: hidden;
+        }
+        .mySwiper_peintures{
+            overflow: hidden;
+        }
+
 
         .mySwiper .btn-Swip{
             position: absolute;

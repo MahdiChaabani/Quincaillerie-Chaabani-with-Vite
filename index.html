@@ -171,22 +171,32 @@
     </div>
 
 
-
-     <section class="slider">
-        <div class="container">
-            
-            <!-- Swiper -->
-            <div class="swiperb mySwiperb">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href="#"><img src="public/images/banner1.jpg" alt=""></a></div>
-                    <div class="swiper-slide"><a href="#"><img src="public/images/banner2.jpg" alt=""></a></div>
-                    <div class="swiper-slide"><a href="#"><img src="public/images/banner3.jpg" alt=""></a></div>
-                </div>
+    <!-- swiper banner -->
+    <section class="slider">         
+    <div class="container">                          
+        <!-- Swiper -->             
+        <div class="swiperb mySwiperb">                 
+            <div class="swiper-wrapper">                     
+                <div class="swiper-slide">
+                    <a href="#"><img src="public/images/banner1.jpg" alt=""></a>
+                </div>                     
+                <div class="swiper-slide">
+                    <a href="#"><img src="public/images/banner2.jpg" alt=""></a>
+                </div>                     
+                <div class="swiper-slide">
+                    <a href="#"><img src="public/images/banner3.jpg" alt=""></a>
+                </div>                 
             </div>
-
-        </div>
-    </section>
-
+            
+            <!-- Add pagination (dots) -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- Add navigation arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>          
+    </div>     
+</section>
 
      <!-- features -->
     <section class="features">
@@ -304,7 +314,7 @@
  <!-- Products outillages -->
     <section class="slider slider-sale" id="products">
         <div class="container">
-            <div class="sale-sec mySwiper">
+            <div class="sale-sec mySwiper_outillages">
                 <div class="top-slide">
                     <h2>Produits  <span>Outillages</span></h2>
                     <div class="header-controls">
@@ -334,7 +344,7 @@
                     </div>
                 </div>
 
-                <div id="swiper-item-sale" class="products swiper-wrapper">
+                <div id="swiper-item-outillages" class="products swiper-wrapper">
 
                             <!-- Produits -->
                        
@@ -353,26 +363,26 @@
  <!-- Products Visserie - Fixation -->
     <section class="slider slider-sale" id="products">
         <div class="container">
-            <div class="sale-sec mySwiper">
+            <div class="sale-sec mySwiper_visserie">
                 <div class="top-slide">
                     <h2>Produits  <span>Visserie</span></h2>
                     <div class="header-controls">
                         <div class="category-tabs">
                             <div class="category-tab">
                                
-                                 Outils
+                                 Boulons & Écrous
                             </div>
                             <div class="category-tab active">
                                
-                                 Chauffage
+                                 Chevilles & Plugs
                             </div>
                             <div class="category-tab">
                                 
-                                Sanitaire
+                                Rondelles
                             </div>
                             <div class="category-tab">
                                 
-                                Robinetterie
+                                Colliers & Serre-joints
                             </div>
                         </div>
                         <a href="#" class="voir-plus-btn">
@@ -383,7 +393,7 @@
                     </div>
                 </div>
 
-                <div id="swiper-item-sale" class="products swiper-wrapper">
+                <div id="swiper-item-visserie" class="products swiper-wrapper">
 
                             <!-- Produits -->
                        
@@ -402,26 +412,26 @@
  <!-- Products Électricité -->
     <section class="slider slider-sale" id="products">
         <div class="container">
-            <div class="sale-sec mySwiper">
+            <div class="sale-sec mySwiper_electricité">
                 <div class="top-slide">
                     <h2>Produits  <span>Électricité</span></h2>
                     <div class="header-controls">
                         <div class="category-tabs">
                             <div class="category-tab">
                                
-                                 Outils
+                                 Câbles & fils
                             </div>
                             <div class="category-tab active">
                                
-                                 Chauffage
+                                  Tableaux électriques & disjoncteurs
                             </div>
                             <div class="category-tab">
                                 
-                                Sanitaire
+                                Éclairage intérieur & extérieur
                             </div>
                             <div class="category-tab">
                                 
-                                Robinetterie
+                                Accessoires électriques
                             </div>
                         </div>
                         <a href="#" class="voir-plus-btn">
@@ -432,7 +442,7 @@
                     </div>
                 </div>
 
-                <div id="swiper-item-sale" class="products swiper-wrapper">
+                <div id="swiper-item-electricité" class="products swiper-wrapper">
 
                             <!-- Produits -->
                        
@@ -452,26 +462,26 @@
  <!-- Products Plomberie -->
     <section class="slider slider-sale" id="products">
         <div class="container">
-            <div class="sale-sec mySwiper">
+            <div class="sale-sec mySwiper_plomberie">
                 <div class="top-slide">
                     <h2>Produits  <span>Plomberie</span></h2>
                     <div class="header-controls">
                         <div class="category-tabs">
                             <div class="category-tab">
                                
-                                 Outils
+                                 Tubes & raccords
                             </div>
                             <div class="category-tab active">
                                
-                                 Chauffage
+                                 Robinets & mitigeurs
                             </div>
                             <div class="category-tab">
                                 
-                                Sanitaire
+                                Chauffe-eau & accessoires
                             </div>
                             <div class="category-tab">
                                 
-                                Robinetterie
+                                Joints & accessoires d’étanchéité
                             </div>
                         </div>
                         <a href="#" class="voir-plus-btn">
@@ -482,7 +492,7 @@
                     </div>
                 </div>
 
-                <div id="swiper-item-sale" class="products swiper-wrapper">
+                <div id="swiper-item-plomberie" class="products swiper-wrapper">
 
                             <!-- Produits -->
                        
@@ -501,26 +511,26 @@
  <!-- Products Peintures et Finitions -->
     <section class="slider slider-sale" id="products">
         <div class="container">
-            <div class="sale-sec mySwiper">
+            <div class="sale-sec mySwiper_peintures">
                 <div class="top-slide">
                     <h2>Produits  <span>Peintures et Finitions</span></h2>
                     <div class="header-controls">
                         <div class="category-tabs">
                             <div class="category-tab">
                                
-                                 Outils
+                                 Peintures intérieures & extérieures
                             </div>
                             <div class="category-tab active">
                                
-                                 Chauffage
+                                 Enduits & mastics
                             </div>
                             <div class="category-tab">
                                 
-                                Sanitaire
+                                Vernis & lasures
                             </div>
                             <div class="category-tab">
                                 
-                                Robinetterie
+                                Accessoires 
                             </div>
                         </div>
                         <a href="#" class="voir-plus-btn">
@@ -531,7 +541,7 @@
                     </div>
                 </div>
 
-                <div id="swiper-item-sale" class="products swiper-wrapper">
+                <div id="swiper-item-peintures" class="products swiper-wrapper">
 
                             <!-- Produits -->
                        
