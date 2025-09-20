@@ -62,7 +62,7 @@ function initSidebarSwiper() {
 
 function initSalesSwiper() {
   const salesSwiper = new Swiper('.sale-sec', {
-    slidesPerView: 6,
+    slidesPerView: 7,
     spaceBetween: 20,
     freeMode: true,
     autoplay: {
